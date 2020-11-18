@@ -106,11 +106,12 @@ def check_imgs_in_dir(dir):
     rownum = 0
     n = 0
 
-    fig, ax = plt.subplots(nrows=9, ncols=2, figsize=(50, 200), dpi=100)
+    fig, ax = plt.subplots(nrows=5, ncols=1, figsize=(50, 200), dpi=100)
     for img_name in dir_listed:
         img = io.imread(os.path.join(dir, img_name))
-        ax[rownum, n%2].imshow(img)  # tymczasowa komenda
-        if (n + 1) % 2 == 0:
+        # ax[rownum].imshow(img)  # tymczasowa komenda
+        color_outlines(img, ax[rownum])
+        if (n + 1) % 1 == 0:
             rownum += 1
         n += 1
         # check_games(img)
